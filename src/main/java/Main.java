@@ -1,4 +1,5 @@
 import Model.Car;
+import Model.Person;
 import Repo.DataRepo;
 import Model.CarRecord;
 import Model.EngineRecord;
@@ -16,6 +17,11 @@ public class Main {
 
     private static void ex1() {
         // TODO...
+        var peopleList = DataRepo.getPeople();
+        var retList = peopleList.stream();
+        // TODO...
+        retList = retList.filter((person) -> person.getAge()>30);
+        System.out.println(retList.collect(Collectors.toList()));
     }
 
     private static void ex2() {
