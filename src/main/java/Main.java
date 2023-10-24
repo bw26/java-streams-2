@@ -14,6 +14,7 @@ public class Main {
     public static void main(String[] args) {
         ex1();
         ex2();
+        ex3();
     }
 
     private static void ex1() {
@@ -34,6 +35,10 @@ public class Main {
 
     private static void ex3() {
         // TODO...
+        var catList = DataRepo.getCats();
+        var retList = catList.stream();
+        System.out.println(retList.filter(cat -> cat.getColor().equals("Brown")).sorted((c1,c2) -> c1.getAge().compareTo(c2.getAge())).
+                collect(Collectors.toList()));
     }
 
     private static void ex4() {
