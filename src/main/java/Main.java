@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) {
         ex1();
+        ex2();
     }
 
     private static void ex1() {
@@ -26,6 +27,9 @@ public class Main {
 
     private static void ex2() {
         // TODO...
+        var peopleList = DataRepo.getPeople();
+        var retList = peopleList.stream();
+        System.out.println(retList.mapToDouble(person -> person.getAge()).average().getAsDouble());
     }
 
     private static void ex3() {
