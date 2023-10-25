@@ -17,6 +17,7 @@ public class Main {
         ex3();
         ex4();
         ex5();
+        ex6();
     }
 
     private static void ex1() {
@@ -57,6 +58,8 @@ public class Main {
 
     private static void ex6() {
         // TODO...
+        var peopleList = DataRepo.getPeople();
+        System.out.println(peopleList.stream().map(person -> person.getFirstName().toUpperCase()).collect(Collectors.toList()));
     }
 
     private static void ex7() {
