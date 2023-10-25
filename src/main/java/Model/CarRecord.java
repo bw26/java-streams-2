@@ -15,6 +15,6 @@ public class CarRecord {
 
     @Override
     public String toString() {
-        return "{" + Id + " " + make + " " + model + " " + price + "}";
+        return "{" + Id + ": " + make + " " + model + " " + price + "}";
     }
 }
