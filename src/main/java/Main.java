@@ -16,6 +16,7 @@ public class Main {
         ex2();
         ex3();
         ex4();
+        ex5();
     }
 
     private static void ex1() {
@@ -50,6 +51,8 @@ public class Main {
 
     private static void ex5() {
         // TODO...
+        var engine = DataRepo.getCarsWithEngines();
+        System.out.println(engine.stream().filter(car -> car.getEngine().getNumCylinders()>=8).count());
     }
 
     private static void ex6() {
