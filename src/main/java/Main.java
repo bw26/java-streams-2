@@ -4,6 +4,7 @@ import Repo.DataRepo;
 import Model.CarRecord;
 import Model.EngineRecord;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
 import java.text.NumberFormat;
@@ -18,6 +19,7 @@ public class Main {
         ex4();
         ex5();
         ex6();
+        ex7();
     }
 
     private static void ex1() {
@@ -64,6 +66,9 @@ public class Main {
 
     private static void ex7() {
         // TODO...
+        var cars = DataRepo.getCars();
+        var carRecords = cars.stream().filter(car -> car.getPrice()>20000).map(car -> new CarRecord(car.getId(),car.getMake(),car.getModel(),NumberFormat.getCurrencyInstance().format(car.getPrice())));
+        System.out.println(carRecords.collect(Collectors.toList()));
     }
 
     private static void ex8() {
