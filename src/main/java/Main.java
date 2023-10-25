@@ -19,6 +19,7 @@ public class Main {
         ex7();
         ex8();
         ex9();
+        ex10();
     }
 
     private static void ex1() {
@@ -85,5 +86,8 @@ public class Main {
     }
     private static void ex10() {
         // TODO...
+        var carList = DataRepo.getCarsWithEngines();
+        var retList = carList.stream().map(car -> new CarRecord(car.getId(),car.getMake(),car.getModel(),NumberFormat.getCurrencyInstance().format(car.getPrice()+((car.getEngine().getNumCylinders()>=8)? car.getEngine().getDisplacment()*100 : 0)))).collect(Collectors.toList());
+        System.out.println(retList);
     }
 }
