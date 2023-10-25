@@ -15,6 +15,7 @@ public class Main {
         ex1();
         ex2();
         ex3();
+        ex4();
     }
 
     private static void ex1() {
@@ -43,6 +44,8 @@ public class Main {
 
     private static void ex4() {
         // TODO...
+        Integer[] numbers = new Integer[] { 1, 2, 3, 1, 2, 3, 4};
+        System.out.println(Arrays.stream(numbers).distinct().collect(Collectors.toList()));
     }
 
     private static void ex5() {
