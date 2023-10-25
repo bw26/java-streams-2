@@ -1,8 +1,5 @@
-import Model.Car;
-import Model.Person;
+import Model.*;
 import Repo.DataRepo;
-import Model.CarRecord;
-import Model.EngineRecord;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,6 +18,7 @@ public class Main {
         ex6();
         ex7();
         ex8();
+        ex9();
     }
 
     private static void ex1() {
@@ -81,6 +79,9 @@ public class Main {
 
     private static void ex9() {
         // TODO...
+        var carList = DataRepo.getCarsWithEngines();
+        var engineRecords = carList.stream().map(car -> new EngineRecord(car.getEngine().getNumCylinders(), car.getEngine().getDisplacment(),(car.getEngine().getNumCylinders()>=8)? car.getEngine().getDisplacment()*100 : 0)).collect(Collectors.toList());
+        System.out.println(engineRecords);
     }
     private static void ex10() {
         // TODO...
