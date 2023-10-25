@@ -20,6 +20,7 @@ public class Main {
         ex5();
         ex6();
         ex7();
+        ex8();
     }
 
     private static void ex1() {
@@ -73,6 +74,9 @@ public class Main {
 
     private static void ex8() {
         // TODO...
+        var carList = DataRepo.getCars();
+        var peopleList = DataRepo.getPeople();
+        System.out.println(peopleList.stream().map(person -> carList.stream().filter(car -> car.getId().equals(person.getCarId())).map(car -> car.getModel()).collect(Collectors.joining())).collect(Collectors.toList()));
     }
 
     private static void ex9() {
